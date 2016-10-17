@@ -3,7 +3,6 @@ FROM istepanov/dokuwiki
 RUN apt-get update && apt-get install -y \ 
     apt-utils \
     curl libcurl3 libcurl3-dev php5-curl php5-mcrypt && php5enmod curl
-#RUN docker-php-ext-install -j$(nproc) curl
 
 WORKDIR /var/dokuwiki-storage/
 RUN  rm -rf /var/www/lib/plugins/ && \
