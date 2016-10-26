@@ -10,4 +10,5 @@ RUN  rm -rf /var/www/lib/plugins/ && \
      rm -rf /var/www/lib/styles/ && \
      ln -s /var/dokuwiki-storage/lib/styles /var/www/lib/styles && \
      rm -rf /var/www/lib/tpl/ && \
-     ln -s /var/dokuwiki-storage/lib/tpl /var/www/lib/tpl
+     ln -s /var/dokuwiki-storage/lib/tpl /var/www/lib/tpl && \
+     php /var/www/bin/indexer.php -c
