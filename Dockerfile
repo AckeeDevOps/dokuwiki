@@ -8,7 +8,7 @@ WORKDIR /var/dokuwiki-storage/
 
 # append a line to start.sh
 # run as www-data: "php bin/indexer.php -c"
-RUN  sed -i '4 a su -s /bin/bash www-data -c "'"php /var/www/bin/indexer.php -c"'"' /start.sh && \
+RUN  sed -i '7 a su -s /bin/bash www-data -c "'"php /var/www/bin/indexer.php -c"'"' /start.sh && \
      rm -rf /var/www/lib/plugins/ && \
      ln -s /var/dokuwiki-storage/lib/plugins /var/www/lib/plugins && \
      rm -rf /var/www/lib/styles/ && \
