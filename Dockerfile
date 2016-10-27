@@ -5,8 +5,10 @@ RUN apt-get update && apt-get install -y \
     curl libcurl3 libcurl3-dev php5-curl php5-mcrypt && php5enmod curl
 
 WORKDIR /var/dokuwiki-storage/
-ADD start.sh /start.sh
-RUN  chmod +x /start.sh && \
+
+# append a line to start.sh
+# run as www-data: "php bin/indexer.php -c"
+RUN  sed -i '4 a su -s /bin/bash www-data -c "'"php /var/www/bin/indexer.php -c"'"' /start.sh && \
      rm -rf /var/www/lib/plugins/ && \
      ln -s /var/dokuwiki-storage/lib/plugins /var/www/lib/plugins && \
      rm -rf /var/www/lib/styles/ && \
