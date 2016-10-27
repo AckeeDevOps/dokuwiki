@@ -5,6 +5,7 @@ dokuwiki docker imaged based on istepanov/dokuwiki image with:
 - persistent **plugins** storage
 - persistent **styles** storage
 - persistent **templates** storage
+- **searchindex** run at start
 - several other improvements
 
  for more informations see [Dockerfile](https://github.com/AckeeCZ/dokuwiki/blob/master/Dockerfile)
