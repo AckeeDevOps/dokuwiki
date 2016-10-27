@@ -11,5 +11,4 @@ RUN  rm -rf /var/www/lib/plugins/ && \
      ln -s /var/dokuwiki-storage/lib/styles /var/www/lib/styles && \
      rm -rf /var/www/lib/tpl/ && \
      ln -s /var/dokuwiki-storage/lib/tpl /var/www/lib/tpl && \
-     php /var/www/bin/indexer.php -c && \
-     chmod -R 777 /var/www/data/cache/
+     su -s /bin/bash www-data ; php /var/www/bin/indexer.php -c
