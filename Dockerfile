@@ -2,7 +2,8 @@ FROM istepanov/dokuwiki
 
 RUN apt-get update && apt-get install -y \ 
     apt-utils \
-    curl libcurl3 libcurl3-dev php5-curl php5-mcrypt && php5enmod curl
+    curl libcurl3 libcurl3-dev php5-curl php5-mcrypt && php5enmod curl && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/dokuwiki-storage/
 
