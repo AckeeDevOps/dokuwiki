@@ -1,7 +1,8 @@
 FROM istepanov/dokuwiki
 WORKDIR /var/dokuwiki-storage/
 
-RUN apk --update add php7-json && rm -rf /var/cache/apk/*
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
+    php7-json && rm -rf /var/cache/apk/*
 
 RUN  rm -rf /var/www/lib/plugins/ && \
      ln -s /var/dokuwiki-storage/lib/plugins /var/www/lib/plugins && \
