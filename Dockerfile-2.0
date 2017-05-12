@@ -1,4 +1,4 @@
-FROM istepanov/dokuwiki
+FROM ackee/docker-dokuwiki
 WORKDIR /var/dokuwiki-storage/
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
